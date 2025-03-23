@@ -16,7 +16,7 @@ description: A tiny, no-frills, template to deploy Python's FastMCP web framewor
 
 # Simple FastMCP AZD Template
 
-The most basic FastMCP "hello world" application as an AZD template ready for Azure App Service
+The most basic FastMCP "hello world" application as an AZD template ready for Azure App Service. Watch the [video](https://www.youtube.com/watch?v=0g1v2q3X8aA) for a walkthrough of what it does.
 
 ![system diagram](diagram.png)
 
