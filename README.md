@@ -59,3 +59,4 @@ See the [pricing calculator](https://azure.microsoft.com/en-au/pricing/calculato
 
 ## Client
 
+Using any MCP client and connect to: https://yourapp.azurewebsites.net/sse
