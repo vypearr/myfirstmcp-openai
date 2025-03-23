@@ -22,7 +22,7 @@ The most basic FastMCP "hello world" application as an AZD template ready for Az
 
 ## Usage
 
-1. Clone Repo, Install AZD and run the following command to initialize the project.
+1. Clone Repo, go to the folder, Install AZD and run the following command to initialize the project.
 
 ```bash
 azd init
