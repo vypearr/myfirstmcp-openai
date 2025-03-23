@@ -1,7 +1,5 @@
 # server.py
-import logging
 
-import uvicorn
 from mcp.server.fastmcp import FastMCP
 from starlette.applications import Starlette
 from starlette.routing import Mount
@@ -31,11 +29,13 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 
 
-if __name__ == "__main__":
+""" if __name__ == "__main__":
     # Set up logging
+    import uvicorn
+
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger("uvicorn")
     logger.setLevel(logging.INFO)
 
     # Run the server
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000) """

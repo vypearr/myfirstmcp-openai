@@ -12,7 +12,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.11'
       ftpsState: 'Disabled'
-      appCommandLine: 'python3 -m gunicorn app:app -k uvicorn.workers.UvicornWorker'
+      appCommandLine: 'python -m uvicorn app:app --host 0.0.0.0 --port 8000'
     }
     httpsOnly: true
   }

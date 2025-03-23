@@ -1,2 +1,4 @@
 mcp
 mcp[cli]
+gunicorn
+uvicorn
