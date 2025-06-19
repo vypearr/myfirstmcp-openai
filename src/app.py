@@ -3,7 +3,7 @@ from starlette.applications import Starlette
 from starlette.routing import Route, Mount
 from starlette.responses import PlainTextResponse
 
-# Create an MCP server with a token.
+# Create an MCP server with a token
 mcp = FastMCP("Demo", auth_token="ttambi7")
 
 # Visible homepage route
