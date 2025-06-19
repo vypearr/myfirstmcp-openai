@@ -6,7 +6,7 @@ from starlette.responses import PlainTextResponse
 # Create an MCP server with a token
 mcp = FastMCP("Demo", auth_token="ttambi7")
 
-# Visible homepage route
+# Visible homepage route.
 async def homepage(request):
     return PlainTextResponse("✅ MCP Server is running!")
 
