@@ -3,32 +3,30 @@ from starlette.applications import Starlette
 from starlette.routing import Route, Mount
 from starlette.responses import PlainTextResponse
 
-# Create an MCP server with a token
-mcp = FastMCP("Demo", auth_token="ttambi7")
+# MCP with token
+mcp = FastMCP("Demo")
 
-# Visible homepage route.
+# Visible homepage
 async def homepage(request):
     return PlainTextResponse("✅ MCP Server is running!")
 
-# ASGI app with homepage and SSE
+# Final app with streamable HTTP mount
 app = Starlette(
     routes=[
-        Route("/", endpoint=homepage),         # Visible root route
-        Mount("/sse", app=mcp.sse_app()),      # SSE for MCP Inspector
+        Route("/", endpoint=homepage),
+        Mount("/stream", app=mcp.streamable_http_app()),  # ✅ new streamable HTTP route
     ]
 )
 
-# Add an addition tool
+# Tools and resources
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
     return a + b
 
-# Add a dynamic greeting resource
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
-    """Get a personalized greeting"""
     return f"Hello, {name}!"
+
 
 """
 # Uncomment this section for local testing (optional)
