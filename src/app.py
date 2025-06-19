@@ -14,7 +14,7 @@ async def homepage(request):
 app = Starlette(
     routes=[
         Route("/", endpoint=homepage),
-        Mount("/stream", app=mcp.streamable_http_app()),  # ✅ new streamable HTTP route
+        Mount("/stream", app=mcp.http_app()),  # ✅ new streamable HTTP route
     ]
 )
 
