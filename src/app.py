@@ -7,7 +7,7 @@ from starlette.routing import Mount
 # Create an MCP server
 mcp = FastMCP("Demo")
 
-# Mount the SSE server to the existing ASGI server
+# Mount the SSE server to the existing ASGI server.
 app = Starlette(
     routes=[
         Mount("/", app=mcp.sse_app()),
