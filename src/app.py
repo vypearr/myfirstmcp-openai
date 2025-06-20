@@ -15,5 +15,5 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http", port=8000)
+    mcp.run(transport="streamable-http")
 
