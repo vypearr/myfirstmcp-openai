@@ -1,4 +1,5 @@
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
+
 
 mcp = FastMCP("Demo", auth_token="ttambi")
 
