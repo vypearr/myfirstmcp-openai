@@ -1,24 +1,10 @@
-from mcp.server.fastmcp import FastMCP
-from starlette.applications import Starlette
-from starlette.routing import Route, Mount
-from starlette.responses import PlainTextResponse
+from fastmcp import FastMCP
 
-# MCP with token
-mcp = FastMCP("Demo")
+mcp = FastMCP("Demo", auth_token="ttambi")
 
 # Visible homepage
 async def homepage(request):
     return PlainTextResponse("✅ MCP Server is running!")
-
-# Final app with streamable HTTP mount
-app = Starlette(
-    routes=[
-        Route("/", endpoint=homepage),
-        Mount("/stream", app=mcp.http_app()),  # ✅ new streamable HTTP route
-    ]
-)
-
-# Tools and resources
 @mcp.tool()
 def add(a: int, b: int) -> int:
     return a + b
@@ -27,16 +13,6 @@ def add(a: int, b: int) -> int:
 def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 
+if __name__ == "__main__":
+    mcp.run(transport="streamable-http", port=8000)
 
-"""
-# Uncomment this section for local testing (optional)
-if __name__ == "__main__":   
-    import uvicorn
-    import logging
-
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger("uvicorn")
-    logger.setLevel(logging.INFO)
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-"""
