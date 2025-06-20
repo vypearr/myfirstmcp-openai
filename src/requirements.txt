@@ -78,5 +78,5 @@ uvicorn==0.34.0
     # via
     #   -r requirements.in
     #   mcp
-fastmcp==0.14.0
+
 
